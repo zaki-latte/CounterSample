@@ -24,6 +24,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D6CC4E1C2D27778300665A4F /* BuildTools */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = BuildTools; sourceTree = "<group>"; };
+		D6CC4E202D2779D100665A4F /* .swiftformat */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftformat; sourceTree = "<group>"; };
 		D6D566752D276F3A004FDEC1 /* CounterSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CounterSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6D566852D276F3E004FDEC1 /* CounterSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CounterSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6D5668F2D276F3E004FDEC1 /* CounterSampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CounterSampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,6 +77,8 @@
 		D6D5666C2D276F3A004FDEC1 = {
 			isa = PBXGroup;
 			children = (
+				D6CC4E202D2779D100665A4F /* .swiftformat */,
+				D6CC4E1C2D27778300665A4F /* BuildTools */,
 				D6D566772D276F3A004FDEC1 /* CounterSample */,
 				D6D566882D276F3E004FDEC1 /* CounterSampleTests */,
 				D6D566922D276F3E004FDEC1 /* CounterSampleUITests */,
@@ -99,6 +103,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D6D566992D276F3E004FDEC1 /* Build configuration list for PBXNativeTarget "CounterSample" */;
 			buildPhases = (
+				D6CC4E1E2D2777E700665A4F /* SwiftFormat */,
 				D6D566712D276F3A004FDEC1 /* Sources */,
 				D6D566722D276F3A004FDEC1 /* Frameworks */,
 				D6D566732D276F3A004FDEC1 /* Resources */,
@@ -146,6 +151,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D6D5669F2D276F3E004FDEC1 /* Build configuration list for PBXNativeTarget "CounterSampleUITests" */;
 			buildPhases = (
+				D6CC4E1F2D27786F00665A4F /* SwiftFormat */,
 				D6D5668B2D276F3E004FDEC1 /* Sources */,
 				D6D5668C2D276F3E004FDEC1 /* Frameworks */,
 				D6D5668D2D276F3E004FDEC1 /* Resources */,
@@ -237,6 +243,47 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		D6CC4E1E2D2777E700665A4F /* SwiftFormat */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftFormat;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\ncd BuildTools\nSDKROOT=(xcrun --sdk macosx --show-sdk-path)\n#swift package update #Uncomment this line temporarily to update the version used to the latest matching your BuildTools/Package.swift file\nswift run -c release swiftformat --lint --lenient \"$SRCROOT\"\n";
+		};
+		D6CC4E1F2D27786F00665A4F /* SwiftFormat */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftFormat;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\ncd BuildTools\nSDKROOT=(xcrun --sdk macosx --show-sdk-path)\n#swift package update #Uncomment this line temporarily to update the version used to the latest matching your BuildTools/Package.swift file\nswift run -c release swiftformat \"$SRCROOT\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D6D566712D276F3A004FDEC1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -324,7 +371,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -387,7 +434,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
