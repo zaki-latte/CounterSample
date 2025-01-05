@@ -32,6 +32,11 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		D67263852D2A158D0028563F /* ci_scripts */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = ci_scripts;
+			sourceTree = "<group>";
+		};
 		D6D566772D276F3A004FDEC1 /* CounterSample */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = CounterSample;
@@ -77,6 +82,7 @@
 		D6D5666C2D276F3A004FDEC1 = {
 			isa = PBXGroup;
 			children = (
+				D67263852D2A158D0028563F /* ci_scripts */,
 				D6CC4E202D2779D100665A4F /* .swiftformat */,
 				D6CC4E1C2D27778300665A4F /* BuildTools */,
 				D6D566772D276F3A004FDEC1 /* CounterSample */,
